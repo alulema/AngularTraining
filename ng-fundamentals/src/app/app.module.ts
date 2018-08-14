@@ -9,6 +9,7 @@ import {NavbarComponent} from './navbar/navbar.component';
 import {ToastrService} from './common/toastr.service.service';
 import {appRoutes} from "../routes";
 import {Error404Component} from './errors/errors.component';
+import {AuthService} from "./user/auth.service";
 
 @NgModule({
     declarations: [
@@ -29,6 +30,7 @@ import {Error404Component} from './errors/errors.component';
         ToastrService,
         LocalLib.EventRouteActivator,
         LocalLib.EventsListResolver,
+        AuthService,
         { provide: 'canDeactivateCreateEvent', useValue: checkDirtyState}
     ],
     bootstrap: [EventsAppComponent]
