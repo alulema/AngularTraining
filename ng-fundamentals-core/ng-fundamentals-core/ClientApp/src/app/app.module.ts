@@ -1,6 +1,7 @@
 import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
 import {RouterModule} from "@angular/router";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 
 import * as LocalLib from './events/index'
 
@@ -10,8 +11,15 @@ import {ToastrService} from './common/toastr.service.service';
 import {appRoutes} from "../routes";
 import {Error404Component} from './errors/errors.component';
 import {AuthService} from "./user/auth.service";
+import {CreateSessionComponent} from "./events/index";
 
 @NgModule({
+    imports: [
+        BrowserModule,
+        FormsModule,
+        ReactiveFormsModule,
+        RouterModule.forRoot(appRoutes)
+    ],
     declarations: [
         EventsAppComponent,
         LocalLib.EventsListComponent,
@@ -19,11 +27,8 @@ import {AuthService} from "./user/auth.service";
         NavbarComponent,
         LocalLib.EventDetailsComponent,
         LocalLib.CreateEventComponent,
-        Error404Component
-    ],
-    imports: [
-        BrowserModule,
-        RouterModule.forRoot(appRoutes)
+        Error404Component,
+        CreateSessionComponent
     ],
     providers: [
         LocalLib.EventService,
