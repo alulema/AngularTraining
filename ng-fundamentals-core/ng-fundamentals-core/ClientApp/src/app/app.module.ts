@@ -11,7 +11,6 @@ import {ToastrService} from './common/toastr.service.service';
 import {appRoutes} from "../routes";
 import {Error404Component} from './errors/errors.component';
 import {AuthService} from "./user/auth.service";
-import {CreateSessionComponent} from "./events/index";
 
 @NgModule({
     imports: [
@@ -28,7 +27,8 @@ import {CreateSessionComponent} from "./events/index";
         LocalLib.EventDetailsComponent,
         LocalLib.CreateEventComponent,
         Error404Component,
-        CreateSessionComponent
+        LocalLib.CreateSessionComponent,
+        LocalLib.SessionListComponent
     ],
     providers: [
         LocalLib.EventService,

@@ -1,7 +1,6 @@
 import {Component, OnInit} from '@angular/core';
-import {EventService} from '../shared/event.service';
 import {ActivatedRoute} from "@angular/router";
-import {IEvent} from "../shared";
+import {EventService, IEvent} from "../shared";
 
 @Component({
     selector: 'event-details',
@@ -15,15 +14,22 @@ import {IEvent} from "../shared";
         .event-image {
             height: 100px
         }
+        
+        a {cursor: pointer}
     `]
 })
 export class EventDetailsComponent implements OnInit {
     event: IEvent;
+    addMode: boolean;
 
     constructor(private eventService: EventService, private route: ActivatedRoute) {
     }
 
     ngOnInit() {
         this.event = this.eventService.getEvent(+this.route.snapshot.params['id']);
+    }
+
+    addSession() {
+        this.addMode = true;
     }
 }
