@@ -11,6 +11,7 @@ import {ToastrService} from './common/toastr.service.service';
 import {appRoutes} from "../routes";
 import {Error404Component} from './errors/errors.component';
 import {AuthService} from "./user/auth.service";
+import { CollapsibleWellComponent } from "./common/collapsible-well.component";
 
 @NgModule({
     imports: [
@@ -28,7 +29,8 @@ import {AuthService} from "./user/auth.service";
         LocalLib.CreateEventComponent,
         Error404Component,
         LocalLib.CreateSessionComponent,
-        LocalLib.SessionListComponent
+        LocalLib.SessionListComponent,
+        CollapsibleWellComponent
     ],
     providers: [
         LocalLib.EventService,
