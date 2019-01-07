@@ -30,7 +30,8 @@ import { CollapsibleWellComponent } from "./common/collapsible-well.component";
         Error404Component,
         LocalLib.CreateSessionComponent,
         LocalLib.SessionListComponent,
-        CollapsibleWellComponent
+        CollapsibleWellComponent,
+        LocalLib.DurationPipe
     ],
     providers: [
         LocalLib.EventService,
