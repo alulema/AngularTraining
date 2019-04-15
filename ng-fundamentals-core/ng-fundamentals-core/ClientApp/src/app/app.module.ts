@@ -7,11 +7,13 @@ import * as LocalLib from './events/index'
 
 import {EventsAppComponent} from './events/events-app.component';
 import {NavbarComponent} from './navbar/navbar.component';
-import {ToastrService} from './common/toastr.service';
+import {TOASTR_TOKEN, Toastr} from './common/toastr.service';
 import {appRoutes} from "../routes";
 import {Error404Component} from './errors/errors.component';
 import {AuthService} from "./user/auth.service";
 import { CollapsibleWellComponent } from "./common/collapsible-well.component";
+
+declare let toastr: Toastr;
 
 @NgModule({
     imports: [
@@ -35,7 +37,7 @@ import { CollapsibleWellComponent } from "./common/collapsible-well.component";
     ],
     providers: [
         LocalLib.EventService,
-        ToastrService,
+        { provide: TOASTR_TOKEN, useValue: toastr },
         LocalLib.EventRouteActivator,
         LocalLib.EventsListResolver,
         AuthService,
